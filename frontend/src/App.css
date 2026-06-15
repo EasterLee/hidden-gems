@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+@theme {
+	--color-mystic-6: #6388c4;
+	--color-mystic-5: #34496b;
+	--color-mystic-4: #302f4e;
+	--color-mystic-3: #5a417c;
+	--color-mystic-2: #7d3e8f;
+	--color-mystic-1: #ad3aad;
+}
+
+.sniglet-regular {
+	font-family: "Sniglet", system-ui;
+	font-weight: 400;
+	font-style: normal;
+}
+
+.sniglet-extrabold {
+	font-family: "Sniglet", system-ui;
+	font-weight: 800;
+	font-style: normal;
+}
+
+.icon {
+	mask-size: 100%;
+	-webkit-mask-repeat: no-repeat;
+	mask-repeat: no-repeat;
+	mask-position: center;
+}
