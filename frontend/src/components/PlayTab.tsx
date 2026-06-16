@@ -1,3 +1,6 @@
 export default function PlayTab() {
-	return <h2>Play Tab</h2>;
+	return;
+	<>
+		<h2>Play Tab</h2>;
+	</>;
 }

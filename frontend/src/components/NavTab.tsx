@@ -25,7 +25,7 @@ export default function NavTab() {
 		<>
 			<div className="flex flex-col items-center h-full text-white">
 				<h2>Nav Tab</h2>
-				<img className="size-25" src="" alt="" />
+				<img className="size-25" src="hidden_gems.png" alt="" />
 				<div className="mb-1 w-full">
 					<NavOption icon="home.svg" text="Home"></NavOption>
 					<NavOption icon="playlist.svg" text="Playlist"></NavOption>
@@ -47,6 +47,14 @@ export default function NavTab() {
 
 				<div className="flex flex-col mb-5 px-5 w-full items-stretch">
 					<h2>Playlist</h2>
+					<div className="w-full bg-mystic-3 ps-2 py-1">
+						<p>Playlist 1</p>
+					</div>
+					<hr />
+					<div className="w-full bg-mystic-3 ps-2 py-1">
+						<p>Playlist 1</p>
+					</div>
+					<hr />
 				</div>
 			</div>
 		</>
