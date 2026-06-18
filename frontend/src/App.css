@@ -7,6 +7,7 @@
 	--color-mystic-3: #5a417c;
 	--color-mystic-2: #7d3e8f;
 	--color-mystic-1: #ad3aad;
+	--color-mystic-text: #ffe4ff;
 }
 
 .sniglet-regular {
@@ -26,4 +27,15 @@
 	-webkit-mask-repeat: no-repeat;
 	mask-repeat: no-repeat;
 	mask-position: center;
+}
+
+.progress-bar {
+	-webkit-appearance: none;
+	appearance: none;
+	outline: none;
+	background-image: linear-gradient(
+		to right,
+		#ad3aad 100%,
+		rgba(0, 0, 0, 0) 100%
+	);
 }

@@ -1,8 +1,6 @@
-import { Component } from "react";
-
 function UploadOption({ icon, text }: { icon: string; text: string }) {
 	return (
-		<div className="my-3 px-5 py-1 bg-mystic-3 flex border-solid border-1 rounded-lg border-mystic-1 items-center">
+		<div className="my-3 px-5 py-1 bg-mystic-3 flex border-solid border rounded-lg border-mystic-1 items-center">
 			<img src={icon} className="size-10 me-2" />
 			<p>{text}</p>
 		</div>
@@ -23,7 +21,7 @@ function NavOption({ icon, text }: { icon: string; text: string }) {
 export default function NavTab() {
 	return (
 		<>
-			<div className="flex flex-col items-center h-full text-white">
+			<div className="flex flex-col items-center h-full text-mystic-text">
 				<h2>Nav Tab</h2>
 				<img className="size-25" src="hidden_gems.png" alt="" />
 				<div className="mb-1 w-full">
