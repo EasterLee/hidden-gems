@@ -15,7 +15,6 @@ app.use((req, res, next) => {
 app.use(express.json());
 app.use(express.static("../frontend/dist"));
 
-// TODO: Move audio to file server
 app.get("/stream/:trackId", async (req, res) => {
 	const url = await getSigned(req.params.trackId);
 	res.json({ url });

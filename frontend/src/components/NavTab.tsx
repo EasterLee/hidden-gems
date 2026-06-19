@@ -1,9 +1,22 @@
-function UploadOption({ icon, text }: { icon: string; text: string }) {
+import { useRef, useState, type ReactNode } from "react";
+
+function UploadOption({
+	icon,
+	text,
+	htmlFor,
+}: {
+	icon: string;
+	text: string;
+	htmlFor: string;
+}) {
 	return (
-		<div className="my-3 px-5 py-1 bg-mystic-3 flex border-solid border rounded-lg border-mystic-1 items-center">
+		<label
+			htmlFor={htmlFor}
+			className="my-3 px-5 py-1 bg-mystic-3 flex border-solid border rounded-lg border-mystic-1 items-center"
+		>
 			<img src={icon} className="size-10 me-2" />
 			<p>{text}</p>
-		</div>
+		</label>
 	);
 }
 function NavOption({ icon, text }: { icon: string; text: string }) {
@@ -19,6 +32,7 @@ function NavOption({ icon, text }: { icon: string; text: string }) {
 }
 
 export default function NavTab() {
+	const [fileName, setFileName] = useState("No file chosen");
 	return (
 		<>
 			<div className="flex flex-col items-center h-full text-mystic-text">
@@ -36,10 +50,25 @@ export default function NavTab() {
 					<UploadOption
 						icon={"yt_icon.svg"}
 						text={"Upload From YouTube"}
+						htmlFor="0"
+					/>
+					<input
+						id="fileUpload"
+						className="hidden"
+						type="file"
+						accept="audio/*"
+						multiple
+						onChange={(e) => {
+							setFileName(
+								e.target.files?.[0]?.name ?? "No file chosen",
+							);
+							console.log(e.target.files?.length);
+						}}
 					/>
 					<UploadOption
 						icon={"file_icon.svg"}
-						text={"Upload From File"}
+						text={fileName}
+						htmlFor="fileUpload"
 					/>
 				</div>
 
