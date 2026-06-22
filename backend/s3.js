@@ -2,6 +2,7 @@ const {
 	S3Client,
 	GetObjectCommand,
 	ListObjectsV2Command,
+	PutObjectCommand,
 } = require("@aws-sdk/client-s3");
 const { getSignedUrl } = require("@aws-sdk/s3-request-presigner");
 require("dotenv").config();
@@ -23,6 +24,17 @@ async function getSigned(fileKey) {
 	);
 }
 
+async function getSignedUpload(fileKey) {
+	return await getSignedUrl(
+		r2,
+		new PutObjectCommand({
+			Bucket: "audio",
+			Key: fileKey,
+		}),
+		{ expiresIn: 3600 }, // seconds
+	);
+}
+
 async function main() {
 	const res = await r2.send(
 		new ListObjectsV2Command({
@@ -34,4 +46,4 @@ async function main() {
 	}
 }
 
-module.exports = { getSigned };
+module.exports = { getSigned, getSignedUpload };

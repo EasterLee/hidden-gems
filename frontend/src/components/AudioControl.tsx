@@ -49,7 +49,7 @@ export default function AudioControl(param: AudioParam) {
 
 	useEffect(() => {
 		let audio = audioRef.current as HTMLAudioElement;
-		let res = fetch(`/stream/${param.src}`);
+		let res = fetch(`http://localhost:3000/stream/${param.src}`);
 		res.then((val) => {
 			val.json().then(({ url }) => {
 				audio.src = url;

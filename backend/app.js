@@ -2,7 +2,7 @@ const express = require("express");
 const fs = require("fs");
 const path = require("path");
 const { tokenVerification } = require("./auth");
-const { getSigned } = require("./s3");
+const { getSigned, getSignedUpload } = require("./s3");
 require("dotenv").config();
 
 const app = express();
@@ -17,6 +17,12 @@ app.use(express.static("../frontend/dist"));
 
 app.get("/stream/:trackId", async (req, res) => {
 	const url = await getSigned(req.params.trackId);
+	res.json({ url });
+});
+
+app.post("/api/uploads/presign", async (req, res) => {
+	const { name } = req.body;
+	const url = await getSignedUpload(name);
 	res.json({ url });
 });
 
