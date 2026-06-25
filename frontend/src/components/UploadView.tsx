@@ -1,5 +1,8 @@
 import { useState } from "react";
 import type { FileInfo } from "../App";
+import List from "./List";
+import { ListEntry, ListHeader } from "./ListEntry";
+import Icon from "./Icon";
 
 type FileEntryParam = {
 	fileInfo: FileInfo;
@@ -90,14 +93,15 @@ export default function UploadView({
 }) {
 	return (
 		<>
-			<div className="text-mystic-text overflow-y-auto max-h-full scroll-area pe-5">
-				<ul>
+			<List>
+				<ListHeader>
 					<div className="ps-3 text-mystic-text flex justify-between pe-5 sticky top-0 bg-mystic-1/90">
 						<h4>File Name</h4>
 						<h4>Progress</h4>
 						<h4>Action</h4>
 					</div>
-					<hr className="border-t-2 border-mystic-1" />
+				</ListHeader>
+				<ListEntry>
 					{fileList.map((v) => (
 						<FileEntry
 							fileInfo={v}
@@ -105,8 +109,17 @@ export default function UploadView({
 							removeFile={removeFile}
 						></FileEntry>
 					))}
-				</ul>
-			</div>
+				</ListEntry>
+			</List>
+			<label
+				className="group border-1 border-mystic-1 rounded-full absolute size-15 bottom-5 p-1 right-5 bg-mystic-3/50 hover:border-mystic-6"
+				htmlFor="fileUpload"
+			>
+				<Icon
+					src="upload.svg"
+					className="bg-mystic-1 size-full group-hover:bg-mystic-6"
+				></Icon>
+			</label>
 		</>
 	);
 }

@@ -10,7 +10,7 @@ export default function MainView({ children }: { children: ReactNode }) {
 			</div>
 
 			<div className="flex-1 border-t-2 border-t-mystic-3 p-5 background-1 min-h-0">
-				<div className="border-2 border-mystic-2 size-full rounded-4xl backdrop backdrop-brightness-50 backdrop-blur-xs p-7">
+				<div className="border-2 border-mystic-2 size-full rounded-4xl backdrop backdrop-brightness-50 backdrop-blur-xs p-7 relative">
 					{children}
 				</div>
 			</div>

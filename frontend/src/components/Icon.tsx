@@ -1,13 +1,13 @@
 type IconProps = {
 	src: string;
-	cn: string;
+	className: string;
 };
 
 export default function Icon(props: IconProps) {
 	return (
 		<div
 			style={{ maskImage: `url(${props.src})` }}
-			className={`icon ${props.cn}`}
+			className={`icon ${props.className}`}
 		></div>
 	);
 }

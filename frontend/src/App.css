@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant hover (&:hover);
+
 @theme {
 	--color-mystic-6: #6388c4;
 	--color-mystic-5: #34496b;
